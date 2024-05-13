@@ -1,0 +1,24 @@
+@import "Colors";
+
+.header{
+    width: 100%;
+    height: 6vh;
+    background-color: $header;
+    display: flex;
+    justify-content: space-between;
+
+    >h1{
+        color: $text2;
+        margin: 1vh 0 0 3vw;
+    }
+
+    >nav{
+        display: flex;
+     >a{
+        color: $text2;
+        font-size: 1.2rem;
+        text-decoration: none;
+        margin: 2vh 3vw 0 0;
+      }
+    }
+}

@@ -1,0 +1,73 @@
+@import "Colors";
+
+.home {
+    width: 100%;
+    height: 90vh;
+    background-color: $first;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+
+    #robo{
+        position: absolute;
+        animation: imgUp 0.7s linear infinite alternate;
+        z-index: 10;
+    }
+
+    #dots{
+        position: absolute;
+        margin-top: 12%;
+        width: 24%;
+    }
+
+    #heroHeading{
+        font-size: 12ch;
+        text-align: center;
+        color: $second;
+        z-index: 1;
+    }
+
+    >img {
+        margin-top: 13%;
+        width: 20%;
+    }
+
+    >div {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem;
+
+        h1 {
+            text-transform: uppercase;
+            // border-bottom: 2px solid white;
+            margin-bottom: 2rem;
+            padding: 0 0.5rem;
+            width: 60vw;
+            color: $text1;
+        }
+
+        // p {
+        //     color: $text2;
+        //     letter-spacing: 2px;
+        //     word-spacing: 5px;
+        //     font: 100 1.2rem;
+        // }
+
+    }
+}
+
+
+
+
+@keyframes imgUp {
+    to {
+        transform: translateY(-10px)
+    }
+}
+
+
+

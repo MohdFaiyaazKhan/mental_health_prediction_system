@@ -1,0 +1,17 @@
+@import "Colors";
+
+.about{
+    background-color: $first;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #aboutContent{
+        width: 56%;
+        font-size: 4ch;
+        text-align: center;
+    }
+
+}

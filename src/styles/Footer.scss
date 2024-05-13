@@ -1,0 +1,27 @@
+@import "Colors";
+
+.footer{
+    width: 100%;
+    height: 16vh;
+    background-color: $footer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+
+    >h2{
+      text-align: center;
+      color: $text2;
+    }
+    >.socialIcons{
+      display: flex;
+      justify-content: center;
+      gap: 4em;
+      margin-top: 2vh;
+
+      >a{
+        text-decoration: none;
+        color: $text2;
+      }
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mental_health_prediction_system/static/css/main.4aa21eca.css",
+    "main.js": "/mental_health_prediction_system/static/js/main.0052a144.js",
+    "static/media/dots.webp": "/mental_health_prediction_system/static/media/dots.e5e03817d0113c44cf5f.webp",
+    "static/media/22.webp": "/mental_health_prediction_system/static/media/22.01a9dbbcfcb30c824d7d.webp",
+    "index.html": "/mental_health_prediction_system/index.html",
+    "main.4aa21eca.css.map": "/mental_health_prediction_system/static/css/main.4aa21eca.css.map",
+    "main.0052a144.js.map": "/mental_health_prediction_system/static/js/main.0052a144.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4aa21eca.css",
+    "static/js/main.0052a144.js"
+  ]
+}

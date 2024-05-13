@@ -1,5 +1,3 @@
-// API_KEY = 'sk-proj-MNrdQPPZ1UaQMVV5Lt4zT3BlbkFJWSxRs5JyT2hktyvZRhOc';
-
 import axios from 'axios';
 
 

@@ -5,48 +5,6 @@ import Result from './Result';
 
 const Ques = () => {
 
-  // function handleSubmit(event) {
-  //   event.preventDefault(); // Prevent default form submission behavior
-    
-  //   // Collect data from form fields
-  //   const formData = {
-  //     name: document.getElementById('name') ? document.getElementById('name').value : '',
-  //     age: document.getElementById('age') ? document.getElementById('age').value : '',
-  //     gender: document.getElementById('gender') ? document.getElementById('gender').value : '',
-  //     ethnicity: document.getElementById('ethnicity') ? document.getElementById('ethnicity').value : '',
-  //     education: document.getElementById('education') ? document.getElementById('education').value : '',
-  //     FamilyHistory: document.getElementById('FamilyHistory') ? document.getElementById('FamilyHistory').value : '',
-  //     PersonalHistory: document.getElementById('PersonalHistory') ? document.getElementById('PersonalHistory').value : '',
-  //     TraumaticHistory: document.getElementById('TraumaticHistory') ? document.getElementById('TraumaticHistory').value : '',
-  //     Sleep: document.getElementById('Sleep') ? document.getElementById('Sleep').value : '',
-  //     Appetite: document.getElementById('Appetite') ? document.getElementById('Appetite').value : '',
-  //     Energy: document.getElementById('Energy') ? document.getElementById('Energy').value : '',
-  //     selfReportSymptoms: document.getElementById('selfReportSymptoms') ? document.getElementById('selfReportSymptoms').value : '',
-  //     ChronicMedical: document.getElementById('ChronicMedical') ? document.getElementById('ChronicMedical').value : '',
-  //     CurentMedical: document.getElementById('CurentMedical') ? document.getElementById('CurentMedical').value : '',
-  //     SubstaceAbuse: document.getElementById('SubstaceAbuse') ? document.getElementById('SubstaceAbuse').value : '',
-  //     Support: document.getElementById('Support') ? document.getElementById('Support').value : '',
-  //     Relationship: document.getElementById('Relationship') ? document.getElementById('Relationship').value : '',
-  //     Isolation: document.getElementById('Isolation') ? document.getElementById('Isolation').value : '',
-  //     RecentLifeEvents: document.getElementById('RecentLifeEvents') ? document.getElementById('RecentLifeEvents').value : '',
-  //     CopingMechanism: document.getElementById('CopingMechanism') ? document.getElementById('CopingMechanism').value : '',
-  //     PersonalityAssessment: document.getElementById('PersonalityAssessment') ? document.getElementById('PersonalityAssessment').value : '',
-  //     ChangesBehavior: document.getElementById('ChangesBehavior') ? document.getElementById('ChangesBehavior').value : '',
-  //     RiskyBehaviors: document.getElementById('RiskyBehaviors') ? document.getElementById('RiskyBehaviors').value : '',
-  //     Questionaries: document.getElementById('Questionaries') ? document.getElementById('Questionaries').value : '',
-  //     Subjective: document.getElementById('Subjective') ? document.getElementById('Subjective').value : '',
-  //     Cognitive: document.getElementById('Cognitive') ? document.getElementById('Cognitive').value : '',
-  //     Thought: document.getElementById('Thought') ? document.getElementById('Thought').value : '',
-  //     Impact: document.getElementById('Impact') ? document.getElementById('Impact').value : '',
-  //     LivingCondition: document.getElementById('LivingCondition') ? document.getElementById('LivingCondition').value : '',
-  //     AccessHeathcare: document.getElementById('AccessHeathcare') ? document.getElementById('AccessHeathcare').value : '',
-  //     CulturalFactors: document.getElementById('CulturalFactors') ? document.getElementById('CulturalFactors').value : '',
-  //   };
-
-  //   // Log form data to console (you can replace this with your logic to store or use the data)
-  //   console.log(formData);
-  // }
-
 
   const [loading, setLoading] = useState(false); // State to manage loading status
   const [result, setResult] = useState(null); // State to store the generated result

@@ -18,74 +18,65 @@ const Ques = () => {
   
     // Collect data from form fields
     const formData = {
-      prompt: "You are the best psychologist I know please help me in predicting my mental health in approx 30-36 words but accurate, these are my details :",
+      prompt: "You are the best psychologist I know please help me in predicting my mental health but accurate, these are my details :",
       name: document.getElementById('name').value,
       age: document.getElementById('age').value,
       gender: document.getElementById('gender').value,
+      employement: document.getElementById('employement').value,
       ethnicity: document.getElementById('ethnicity').value,
-      education: document.getElementById('education').value,
-      FamilyHistory: document.getElementById('FamilyHistory').value,
-      PersonalHistory: document.getElementById('PersonalHistory').value,
-      TraumaticHistory: document.getElementById('TraumaticHistory').value,
-      Sleep: document.getElementById('Sleep').value,
-      Appetite: document.getElementById('Appetite').value,
-      Energy: document.getElementById('Energy').value,
-      selfReportSymptoms: document.getElementById('selfReportSymptoms').value,
-      ChronicMedical: document.getElementById('ChronicMedical').value,
-      CurentMedical: document.getElementById('CurentMedical').value,
-      SubstaceAbuse: document.getElementById('SubstaceAbuse').value,
-      Support: document.getElementById('Support').value,
-      Relationship: document.getElementById('Relationship').value,
-      Isolation: document.getElementById('Isolation').value,
-      RecentLifeEvents: document.getElementById('RecentLifeEvents').value,
+      educationalBackground: document.getElementById('education').value,
+      FamilyHistoryOfMentalHealthIssues: document.getElementById('FamilyHistory').value,
+      PersonalHistoryOfMentalHealthTreatmentOrCounseling: document.getElementById('PersonalHistory').value,
+      TraumaticExperienceOrHistoryOfAbuse: document.getElementById('TraumaticHistory').value,
+      ChangeInSleepPatterns: document.getElementById('Sleep').value,
+      ChangeInAppetite: document.getElementById('Appetite').value,
+      EnergyLevel: document.getElementById('Energy').value,
+      selfReportedSymptoms: document.getElementById('selfReportSymptoms').value,
+      ChronicMedicalCondition: document.getElementById('ChronicMedical').value,
+      CurentMedications: document.getElementById('CurentMedical').value,
+      HistoryOfSubstaceAbuse: document.getElementById('SubstaceAbuse').value,
+      AvailabilityOfSupportSystemFromFamilyAndFriends: document.getElementById('Support').value,
+      RelationshipQuality: document.getElementById('Relationship').value,
+      SocialIsolationIndicators: document.getElementById('Isolation').value,
+      RecentLifeEventsOrStressors: document.getElementById('RecentLifeEvents').value,
       CopingMechanism: document.getElementById('CopingMechanism').value,
       PersonalityAssessment: document.getElementById('PersonalityAssessment').value,
-      ChangesBehavior: document.getElementById('ChangesBehavior').value,
-      RiskyBehaviors: document.getElementById('RiskyBehaviors').value,
-      Questionaries: document.getElementById('Questionaries').value,
-      Subjective: document.getElementById('Subjective').value,
-      Cognitive: document.getElementById('Cognitive').value,
-      Thought: document.getElementById('Thought').value,
-      Impact: document.getElementById('Impact').value,
-      LivingCondition: document.getElementById('LivingCondition').value,
-      AccessHeathcare: document.getElementById('AccessHeathcare').value,
+      ChangesInBehavior: document.getElementById('ChangesBehavior').value,
+      PatternsOfAvoidanceOrEngagementInRiskyBehaviors: document.getElementById('RiskyBehaviors').value,
+      QuestionnariesAndSelfAssesmentTools: document.getElementById('Questionaries').value,
+      SubjectiveWellBeingScales: document.getElementById('Subjective').value,
+      CognitiveAssessment: document.getElementById('Cognitive').value,
+      ThoughtPatternsAndCognitiveDistortions: document.getElementById('Thought').value,
+      ImpactOfMentalHealthOnDailyFunctioningLikeWorkRelationshipSelfCareEtc: document.getElementById('Impact').value,
+      LivingConditions: document.getElementById('LivingCondition').value,
+      AccessToHeathcare: document.getElementById('AccessHeathcare').value,
       CulturalFactors: document.getElementById('CulturalFactors').value,
     };
   
+    const options = {
+      method: 'POST',
+      url: 'https://open-ai25.p.rapidapi.com/ask',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'd557b3c892msh229a6379e3a805ep15c210jsnb938b7f28495',
+        'X-RapidAPI-Host': 'open-ai25.p.rapidapi.com'
+      },
+      data: {
+        query: JSON.stringify(formData) // Convert form data to JSON string and send as input
+      }
+    };
+
     try {
-      console.log(formData)
-      const response = await axios.post(
-        'https://open-ai21.p.rapidapi.com/chatgpt',
-        {
-          messages: [
-            {
-              role: 'user',
-              content: JSON.stringify(formData) // Convert form data to JSON string and send as input
-            }
-          ],
-          web_access: false
-        },
-        {
-          headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': 'd557b3c892msh229a6379e3a805ep15c210jsnb938b7f28495', 
-            'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
-          }
-        }
-      );
-  
-      console.log(response.data.result); // Log the generated output to the console
-      setResult(response.data.result); // Set the generated result
-      setLoading(false); // Set loading to false after receiving the response
-  
-      // Handle the response data as needed
+      const response = await axios.request(options);
+      console.log(JSON.stringify(formData))
+      console.log(response.data);
+      setResult(response.data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
-      setLoading(false); // Set loading to false if there's an error
+      setLoading(false);
     }
   }
-  
-
 
   return (
     <div className='ques'>
@@ -100,7 +91,7 @@ const Ques = () => {
             <label>Name :</label>
               <input id='name' type='text' required />
           </div>
-          <div>
+          <div id='multipleInput3'>
             <label>Age :</label>
               <input id='age' type='text' required />
             <label>Gender :</label>
@@ -111,7 +102,7 @@ const Ques = () => {
               <option value="Others">Others</option>
             </select>
             <label>Employment Status :</label>
-            <select id="Employement">
+            <select id="employement">
               <option value="">-- Select --</option>
               <option value="Employed">Employed</option>
               <option value="Unemployed">Unemployed</option>
@@ -167,9 +158,9 @@ const Ques = () => {
 
         
         <h2>Current Mental Health Symptoms</h2>
-          <div>
+          <div id='multipleInput3'>
             <label>Change in Sleep patterns :</label>
-            <select id='Sleep'>
+            <select id='Sleep input3'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -230,7 +221,7 @@ const Ques = () => {
                 <option value="No">No</option>
               </select>
             </div>
-            <div>
+            <div id='multipleInput2'>
             <label>Relationship quality :</label>
             <select id='Relationship'>
                 <option value="">-- Select --</option>
@@ -313,7 +304,7 @@ const Ques = () => {
 
         
         <h2>Environment Factors</h2>
-          <div>
+          <div id='multipleInput3'>
             <label>Living conditions :</label>
             <select id='LivingCondition'>
                 <option value="">-- Select --</option>

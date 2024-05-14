@@ -76,3 +76,102 @@
         }
     
 }
+
+@media only screen and (max-width: 600px){
+    .ques{
+        // margin-top: -40rem;
+        height: 840vh;
+
+        >h1{
+            font-size: 1.7rem;
+        }
+
+        >form{
+            margin-top: -30rem;
+            margin: 1rem;
+            width: 94%;
+
+            >h2{
+                margin: 4rem;
+                font-size: 1.4rem;
+                text-align: center;
+            }
+
+            >#multipleInput3{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                height: 34vh;
+            }
+
+            >#multipleInput2{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                height: 24vh;
+            }
+
+            >div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 2em;
+
+                >label{
+                    // margin: 2rem;
+                    width: 98%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .ques{
+        // margin-top: -40rem;
+        height: 840vh;
+
+        >h1{
+            font-size: 1.2rem;
+        }
+
+        >form{
+            margin: 1rem;
+            width: 94%;
+
+            >h2{
+                font-size: 1rem;
+            }
+
+            >#multipleInput3{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                height: 34vh;
+            }
+
+            >#multipleInput2{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                height: 24vh;
+            }
+
+            >div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 2em;
+
+                >label{
+                    font-size: 0.8rem;
+                    width: 98%;
+                }
+
+               
+            }
+        }
+    }
+}

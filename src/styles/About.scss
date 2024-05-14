@@ -15,3 +15,25 @@
     }
 
 }
+
+@media only screen and (max-width: 600px){
+    .about{
+        height: 70vh;
+
+        #aboutContent{
+            margin-top: -18rem;
+            width: 80%;
+            font-size: 3ch;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .about{
+        height: 70vh;
+
+        #aboutContent{
+            font-size: 2ch;
+        }
+    }
+}

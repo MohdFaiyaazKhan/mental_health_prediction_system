@@ -20,3 +20,17 @@
         text-align: justify;
     }
 }
+
+@media only screen and (max-width: 600px){
+    .result{
+        width: 90%;
+
+        >h2{
+            font-size: 1.6rem;
+        }
+
+        >p{
+            font-size: 1.2rem;
+        }
+    }
+}

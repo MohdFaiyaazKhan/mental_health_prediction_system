@@ -8,6 +8,7 @@ const Header = () => {
     <h1>InsightfulMind.</h1>
     <nav>
       < Link to ="/">Home</Link>
+      {/* < Link to ="/ques">Questions</Link> */}
       < Link to ="/about">About</Link>
       < Link to ="/contact">Contact</Link>
     </nav>

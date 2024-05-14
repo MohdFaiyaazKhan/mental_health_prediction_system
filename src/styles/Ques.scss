@@ -2,6 +2,7 @@
 
 .ques{
     background-color: $first;
+    margin-top: -8%;
     height: 560vh;
     width: 100%;
     display: flex;
@@ -52,6 +53,7 @@
 
                 >label{
                     width:58%;
+                    // font-size: 1.2em;
                 }
 
             }

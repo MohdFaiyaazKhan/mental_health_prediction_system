@@ -7,7 +7,7 @@ async function fetchData() {
       url: 'https://open-ai21.p.rapidapi.com/chatgpt',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': process.env.API_KEY,
+        'X-RapidAPI-Key': 'd557b3c892msh229a6379e3a805ep15c210jsnb938b7f28495',
         'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
       },
       data: {

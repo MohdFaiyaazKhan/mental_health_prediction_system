@@ -3,6 +3,7 @@ import "../styles/Ques.scss"
 import axios from 'axios';
 import Result from './Result';
 
+
 const Ques = () => {
 
 
@@ -17,37 +18,38 @@ const Ques = () => {
   
     // Collect data from form fields
     const formData = {
-      name: document.getElementById('name') ? document.getElementById('name').value : '',
-      age: document.getElementById('age') ? document.getElementById('age').value : '',
-      gender: document.getElementById('gender') ? document.getElementById('gender').value : '',
-      ethnicity: document.getElementById('ethnicity') ? document.getElementById('ethnicity').value : '',
-      education: document.getElementById('education') ? document.getElementById('education').value : '',
-      FamilyHistory: document.getElementById('FamilyHistory') ? document.getElementById('FamilyHistory').value : '',
-      PersonalHistory: document.getElementById('PersonalHistory') ? document.getElementById('PersonalHistory').value : '',
-      TraumaticHistory: document.getElementById('TraumaticHistory') ? document.getElementById('TraumaticHistory').value : '',
-      Sleep: document.getElementById('Sleep') ? document.getElementById('Sleep').value : '',
-      Appetite: document.getElementById('Appetite') ? document.getElementById('Appetite').value : '',
-      Energy: document.getElementById('Energy') ? document.getElementById('Energy').value : '',
-      selfReportSymptoms: document.getElementById('selfReportSymptoms') ? document.getElementById('selfReportSymptoms').value : '',
-      ChronicMedical: document.getElementById('ChronicMedical') ? document.getElementById('ChronicMedical').value : '',
-      CurentMedical: document.getElementById('CurentMedical') ? document.getElementById('CurentMedical').value : '',
-      SubstaceAbuse: document.getElementById('SubstaceAbuse') ? document.getElementById('SubstaceAbuse').value : '',
-      Support: document.getElementById('Support') ? document.getElementById('Support').value : '',
-      Relationship: document.getElementById('Relationship') ? document.getElementById('Relationship').value : '',
-      Isolation: document.getElementById('Isolation') ? document.getElementById('Isolation').value : '',
-      RecentLifeEvents: document.getElementById('RecentLifeEvents') ? document.getElementById('RecentLifeEvents').value : '',
-      CopingMechanism: document.getElementById('CopingMechanism') ? document.getElementById('CopingMechanism').value : '',
-      PersonalityAssessment: document.getElementById('PersonalityAssessment') ? document.getElementById('PersonalityAssessment').value : '',
-      ChangesBehavior: document.getElementById('ChangesBehavior') ? document.getElementById('ChangesBehavior').value : '',
-      RiskyBehaviors: document.getElementById('RiskyBehavior') ? document.getElementById('RiskyBehaviors').value : '',
-      Questionaries: document.getElementById('Questionaries') ? document.getElementById('Questionaries').value : '',
-      Subjective: document.getElementById('Subjective') ? document.getElementById('Subjective').value : '',
-      Cognitive: document.getElementById('Cognitive') ? document.getElementById('Cognitive').value : '',
-      Thought: document.getElementById('Thought') ? document.getElementById('Thought').value : '',
-      Impact: document.getElementById('Impact') ? document.getElementById('Impact').value : '',
-      LivingCondition: document.getElementById('LivingCondition') ? document.getElementById('LivingCondition').value : '',
-      AccessHeathcare: document.getElementById('AccessHeathcare') ? document.getElementById('AccessHeathcare').value : '',
-      CulturalFactors: document.getElementById('CulturalFactors') ? document.getElementById('CulturalFactors').value : '',
+      prompt: "You are the best psychologist I know please help me in predicting my mental health in approx 30-36 words but accurate, these are my details :",
+      name: document.getElementById('name').value,
+      age: document.getElementById('age').value,
+      gender: document.getElementById('gender').value,
+      ethnicity: document.getElementById('ethnicity').value,
+      education: document.getElementById('education').value,
+      FamilyHistory: document.getElementById('FamilyHistory').value,
+      PersonalHistory: document.getElementById('PersonalHistory').value,
+      TraumaticHistory: document.getElementById('TraumaticHistory').value,
+      Sleep: document.getElementById('Sleep').value,
+      Appetite: document.getElementById('Appetite').value,
+      Energy: document.getElementById('Energy').value,
+      selfReportSymptoms: document.getElementById('selfReportSymptoms').value,
+      ChronicMedical: document.getElementById('ChronicMedical').value,
+      CurentMedical: document.getElementById('CurentMedical').value,
+      SubstaceAbuse: document.getElementById('SubstaceAbuse').value,
+      Support: document.getElementById('Support').value,
+      Relationship: document.getElementById('Relationship').value,
+      Isolation: document.getElementById('Isolation').value,
+      RecentLifeEvents: document.getElementById('RecentLifeEvents').value,
+      CopingMechanism: document.getElementById('CopingMechanism').value,
+      PersonalityAssessment: document.getElementById('PersonalityAssessment').value,
+      ChangesBehavior: document.getElementById('ChangesBehavior').value,
+      RiskyBehaviors: document.getElementById('RiskyBehaviors').value,
+      Questionaries: document.getElementById('Questionaries').value,
+      Subjective: document.getElementById('Subjective').value,
+      Cognitive: document.getElementById('Cognitive').value,
+      Thought: document.getElementById('Thought').value,
+      Impact: document.getElementById('Impact').value,
+      LivingCondition: document.getElementById('LivingCondition').value,
+      AccessHeathcare: document.getElementById('AccessHeathcare').value,
+      CulturalFactors: document.getElementById('CulturalFactors').value,
     };
   
     try {
@@ -66,7 +68,7 @@ const Ques = () => {
         {
           headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': process.env.API_KEY, 
+            'X-RapidAPI-Key': 'd557b3c892msh229a6379e3a805ep15c210jsnb938b7f28495', 
             'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
           }
         }
@@ -82,6 +84,7 @@ const Ques = () => {
       setLoading(false); // Set loading to false if there's an error
     }
   }
+  
 
 
   return (
@@ -328,6 +331,8 @@ const Ques = () => {
             <label>Cultural factors :</label>
               <input id='CulturalFactors' type='text' required />
           </div>
+
+          
           <button type='submit'>Send</button>
       </form>
 

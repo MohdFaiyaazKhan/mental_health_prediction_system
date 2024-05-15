@@ -2,7 +2,7 @@
 
 .ques{
     background-color: $first;
-    margin-top: -8%;
+    // margin-top: -8%;
     height: 560vh;
     width: 100%;
     display: flex;
@@ -11,19 +11,19 @@
     align-items: center;
 
         >form {
-            margin: 5rem;
-            width: 56%;
+            margin: 2rem;
+            width: 60%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
             >h2{
-                margin: 6rem;
+                margin: 4rem;
             }
 
             >div {
-                height: 3rem;
+                height: 4rem;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
@@ -32,8 +32,8 @@
 
                 >input{
                     width: 100%;
+                    font-size: 1em;
                     padding: 0.6em;
-                    // border-radius: 5px;
                     background-color: $first;
                     border: none;
                     border-bottom: 1px solid #000000;
@@ -43,6 +43,7 @@
 
                 >select{
                     width: 100%;
+                    font-size: 1em;
                     padding: 0.6em;
                     background-color: $first;
                     border: none;
@@ -53,12 +54,12 @@
 
                 >label{
                     width:58%;
-                    // font-size: 1.2em;
+                    font-size: 1.2em;
                 }
 
             }
             >button{
-                margin: 6rem 0;
+                margin-top: 10rem;
                 padding: 0.7rem;
                 border: none;
                 border-radius: 5px;

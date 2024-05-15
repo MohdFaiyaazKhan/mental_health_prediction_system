@@ -10,7 +10,9 @@ const Ques = () => {
   const [loading, setLoading] = useState(false); // State to manage loading status
   const [result, setResult] = useState(null); // State to store the generated result
 
-
+  const midLabel ={
+    textAlign: 'center'
+  }
 
   async function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission behavior
@@ -18,39 +20,50 @@ const Ques = () => {
   
     // Collect data from form fields
     const formData = {
-      prompt: "You are the best psychologist I know please help me in predicting my mental health but accurate, these are my details :",
+      prompt: "You are the best psychologist I know please help me in predicting my mental health, I have taken the data from a survey form and these are my details :",
       name: document.getElementById('name').value,
       age: document.getElementById('age').value,
       gender: document.getElementById('gender').value,
       employement: document.getElementById('employement').value,
-      ethnicity: document.getElementById('ethnicity').value,
       educationalBackground: document.getElementById('education').value,
+
       FamilyHistoryOfMentalHealthIssues: document.getElementById('FamilyHistory').value,
       PersonalHistoryOfMentalHealthTreatmentOrCounseling: document.getElementById('PersonalHistory').value,
       TraumaticExperienceOrHistoryOfAbuse: document.getElementById('TraumaticHistory').value,
+
       ChangeInSleepPatterns: document.getElementById('Sleep').value,
       ChangeInAppetite: document.getElementById('Appetite').value,
       EnergyLevel: document.getElementById('Energy').value,
       selfReportedSymptoms: document.getElementById('selfReportSymptoms').value,
+
       ChronicMedicalCondition: document.getElementById('ChronicMedical').value,
       CurentMedications: document.getElementById('CurentMedical').value,
       HistoryOfSubstaceAbuse: document.getElementById('SubstaceAbuse').value,
-      AvailabilityOfSupportSystemFromFamilyAndFriends: document.getElementById('Support').value,
-      RelationshipQuality: document.getElementById('Relationship').value,
-      SocialIsolationIndicators: document.getElementById('Isolation').value,
+
+      YouHaveAvailabilityOfSupportSystemFromFamilyAndFriends: document.getElementById('Support').value,
+      YouHaveGoodRelationshipQuality: document.getElementById('Relationship').value,
+      YouHaveSocialIsolationIndicators: document.getElementById('Isolation').value,
+
       RecentLifeEventsOrStressors: document.getElementById('RecentLifeEvents').value,
       CopingMechanism: document.getElementById('CopingMechanism').value,
+
       PersonalityAssessment: document.getElementById('PersonalityAssessment').value,
-      ChangesInBehavior: document.getElementById('ChangesBehavior').value,
-      PatternsOfAvoidanceOrEngagementInRiskyBehaviors: document.getElementById('RiskyBehaviors').value,
-      QuestionnariesAndSelfAssesmentTools: document.getElementById('Questionaries').value,
-      SubjectiveWellBeingScales: document.getElementById('Subjective').value,
-      CognitiveAssessment: document.getElementById('Cognitive').value,
-      ThoughtPatternsAndCognitiveDistortions: document.getElementById('Thought').value,
-      ImpactOfMentalHealthOnDailyFunctioningLikeWorkRelationshipSelfCareEtc: document.getElementById('Impact').value,
+
+      HaveYouNoticedAnyChangesInYourBehavior: document.getElementById('ChangesBehaviors').value,
+      DoYouFindYourselfAvoidingCertainActivitiesOrSituationsMoreThanUsual: document.getElementById('AvoidingBehaviors').value,
+      DoYouFindYourselfEngagingInRiskyBehaviors: document.getElementById('RiskyBehaviors').value,
+
+      HaveYouExperiencedLossOfInterestOrPleasureInActivitiesYouUsuallyEnjoy: document.getElementById('lossOfInterest').value,
+      OverallIAmSatisfiedWithMyLife: document.getElementById('SatisfiedLife').value,
+
+      HowOftenDoYouFindYourselfEasilyDistracted: document.getElementById('Cognitive').value,
+      ToWhatExtendDoYouOftenCatastrophizeSituation: document.getElementById('Thought').value,
+
+      HaveYouEverMissedSchoolOrSocialEngagementBecauseOfYourMentalHealthConditions: document.getElementById('Impact').value,
+
       LivingConditions: document.getElementById('LivingCondition').value,
       AccessToHeathcare: document.getElementById('AccessHeathcare').value,
-      CulturalFactors: document.getElementById('CulturalFactors').value,
+      HowConcernAreYouAboutEnvironmentalIssuesInYourCommunity: document.getElementById('CulturalFactors').value,
     };
   
     const options = {
@@ -79,6 +92,8 @@ const Ques = () => {
   }
 
   return (
+
+    <>
     <div className='ques'>
     <h1>Answer the following Questions</h1>
 
@@ -93,7 +108,9 @@ const Ques = () => {
           </div>
           <div id='multipleInput3'>
             <label>Age :</label>
-              <input id='age' type='text' required />
+              <input id='age' type='number' required />
+          </div>
+          <div>
             <label>Gender :</label>
             <select id="gender">
               <option value="">-- Select --</option>
@@ -101,27 +118,13 @@ const Ques = () => {
               <option value="Female">Female</option>
               <option value="Others">Others</option>
             </select>
+          </div>
+          <div>
             <label>Employment Status :</label>
             <select id="employement">
               <option value="">-- Select --</option>
               <option value="Employed">Employed</option>
               <option value="Unemployed">Unemployed</option>
-            </select>
-          </div>
-          <div>
-            <label>Ethnicity :</label>
-            <select id="ethnicity">
-              <option value="">-- Select --</option>
-              <option value="Indian">Indian</option>
-              <option value="Japanese">Japanese</option>
-              <option value="Italian">Italian</option>
-              <option value="Korean">Korean</option>
-              <option value="Nigerian">Nigerian</option>
-              <option value="Swedish">Swedish</option>
-              <option value="Mexican">Mexican</option>
-              <option value="Russian">Russian</option>
-              <option value="Kenyan">Kenyan</option>
-              <option value="Greek">Greek</option>
             </select>
           </div>
           <div>
@@ -158,19 +161,23 @@ const Ques = () => {
 
         
         <h2>Current Mental Health Symptoms</h2>
-          <div id='multipleInput3'>
+          <div>
             <label>Change in Sleep patterns :</label>
-            <select id='Sleep input3'>
+            <select id='Sleep'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
+          </div>
+          <div>
             <label>Change in Appetite :</label>
             <select id='Appetite'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
+          </div>
+          <div>
             <label>Energy Level :</label>
             <select id='Energy'>
                 <option value="">-- Select --</option>
@@ -180,7 +187,7 @@ const Ques = () => {
               </select>
           </div>
           <div>
-            <label>Self-reported symptoms (e.g., depression, anxiety) :</label>
+            <label>Self-reported symptoms (e.g., depression, anxiety, mood swing, etc) :</label>
               <input id='selfReportSymptoms' type='text' required />
           </div>
 
@@ -214,26 +221,36 @@ const Ques = () => {
         
         <h2>Social Support</h2>
           <div>
-            <label>Availability of a support system (family, friends, community) :</label>
+            <label>You have availability of a support system (family, friends, community) :</label>
             <select id='Support'>
-                <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+            <option value="">-- Select --</option>
+                <option value="Stongly Agree">Strongly Agree</option>
+                <option value="Agree">Agree</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Disagree">Disagree</option>
+                <option value="Strongly Disagree">Strongly Disagree</option>
               </select>
             </div>
-            <div id='multipleInput2'>
-            <label>Relationship quality :</label>
+            <div>
+            <label>You have a Good relationship quality :</label>
             <select id='Relationship'>
-                <option value="">-- Select --</option>
-                <option value="HighlySatisfied">Highly Satisfied</option>
-                <option value="JustSatisfied">Just Satisfied</option>
-                <option value="NotSatisfied">Not Satisfied</option>
+            <option value="">-- Select --</option>
+                <option value="Stongly Agree">Strongly Agree</option>
+                <option value="Agree">Agree</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Disagree">Disagree</option>
+                <option value="Strongly Disagree">Strongly Disagree</option>
               </select>
-            <label>Social isolation indicators :</label>
+            </div>
+            <div>
+            <label>You have a Social isolation indicators :</label>
             <select id='Isolation'>
                 <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="Stongly Agree">Strongly Agree</option>
+                <option value="Agree">Agree</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Disagree">Disagree</option>
+                <option value="Strongly Disagree">Strongly Disagree</option>
               </select>
           </div>
 
@@ -241,31 +258,81 @@ const Ques = () => {
         <h2>Stressors and Life Events</h2>
           <div>
             <label>Recent life events or stressors :</label>
-              <input id='RecentLifeEvents' type='text' required />
+              <select id='RecentLifeEvents'>
+                <option value="">-- Select --</option>
+                <option value="Work-related stressors">Work-related stressors</option>
+                <option value="Financial stressors">Financial stressors</option>
+                <option value="Family-related stressors">Family-related stressors</option>
+                <option value="Health-related stressors">Health-related stressors</option>
+                <option value="Life transitions">Life transitions</option>
+                <option value="Traumatic events">Traumatic events</option>
+                <option value="Legal or criminal stressors">Legal or criminal stressors</option>
+                <option value="Educational stressors">Educational stressors</option>
+                <option value="Social stressors">Social stressors</option>
+                <option value="Housing-related stressors">Housing-related stressors</option>
+                <option value="Substance abuse or addiction">Substance abuse or addiction</option>
+                <option value="Cultural or identity-related stressors">Cultural or identity-related stressors</option>
+                <option value="Technology-related stressors">Technology-related stressors</option>
+                <option value="Transportation-related stressors">Transportation-related stressors</option>
+                <option value="Natural or environmental stressors">Natural or environmental stressors</option>
+                <option value="Parenting-related stressors">Parenting-related stressors</option>
+                <option value="Spiritual or existential stressors">Spiritual or existential stressors</option>
+                <option value="Legal immigration-related stressors">Legal immigration-related stressors</option>
+                <option value="Community-related stressors">Community-related stressors</option>
+                <option value="Educational/career advancement stressors">Educational/career advancement stressors</option>
+                <option value="other">Other</option>
+              </select>
           </div><div>
             <label>Coping mechanisms :</label>
-              <input id='CopingMechanism' type='text' required />
+              <select id='CopingMechanism'>
+                <option value="">-- Select --</option>
+                <option value="Physical Exercise">Physical Exercise</option>
+                <option value="Mindfulness and Meditation">Mindfulness and Meditation</option>
+                <option value="Seek Social Support">Seek Social Support</option>
+                <option value="Journaling">Journaling</option>
+                <option value="Sleep">Sleep</option>
+                <option value="Binge Eating">Binge Eating</option>
+                <option value="Hobbies and Creativity">Hobbies and Creativity</option>
+                <option value="Sugar Intake">Sugar Intake</option>
+                <option value="Substance Abuse">Substance Abuse</option>
+                <option value="Other">Other</option>
+              </select>
           </div>
 
         
         <h2>Personality Traits</h2>
           <div>
             <label>Personality assessments (e.g., Big Five personality traits) :</label>
-              <input id='PersonalityAssessment' type='text' required />
+              <select id='PersonalityAssessment'>
+                <option value="">-- Select --</option>
+                <option title="I like trying new things, I enjoy thinking about new ideas, I like being creative" value="Openness- I like trying new things, I enjoy thinking about new ideas, I like being creative">Openness</option>
+                <option title="I am careful and organized, I always finish what I start, I like making plans and following them" value="Conscientiousness- I am careful and organized, I always finish what I start, I like making plans and following them">Conscientiousness</option>
+                <option title="I like being with people, I enjoy parties and social events, I'm usually the one to start conversations" value="Extraversion- I like being with people, I enjoy parties and social events, I'm usually the one to start conversations">Extraversion</option>
+                <option title="I am kind to others, I like helping people, I try to get along with everyone" value="Agreeableness- I am kind to others, I like helping people, I try to get along with everyone">Agreeableness</option>
+                <option title="I worry a lot, I get upset easily, I often feel sad or anxious" value="Neuroticism- I worry a lot, I get upset easily, I often feel sad or anxious">Neuroticism</option>
+              </select>
           </div>
 
         
         <h2>Behavirol Patterns</h2>
           <div>
-            <label>Changes in behavior :</label>
-            <select id='ChangesBehavior'>
+            <label>Have you noticed any changes in your behavior recently? :</label>
+            <select id='ChangesBehaviors'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
           </div>
           <div>
-            <label>Patterns of avoidance or engagement in risky behaviors :</label>
+            <label>Do you find youself avoiding certain activities or situations more than usual? :</label>
+            <select id='AvoidingBehaviors'>
+                <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+          </div>
+          <div>
+            <label>Do you find youself engaging in risky behaviours more frequently than before? :</label>
             <select id='RiskyBehaviors'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
@@ -276,30 +343,77 @@ const Ques = () => {
         
         <h2>Self-Reported Measures</h2>
           <div>
-            <label>Questionnaires and self-assessment tools for mental health :</label>
-              <input id='Questionaries' type='text' required />
+            <label style={midLabel}>Questionnaires and self-assessment tools for mental health :</label>
           </div>
           <div>
-            <label>Subjective well-being scales :</label>
-              <input id='Subjective' type='text' required />
+            <label>Have you experienced a loss of interest or pleasure in activities you usually enjoy? :</label>
+              {/* <input id='Questionaries' type='text' required /> */}
+              <select id='lossOfInterest'>
+                <option value="">-- Select --</option>
+                <option value="Not at all">Not at all</option>
+                <option value="Several days">Several days</option>
+                <option value="More than half the days">More than half the days</option>
+                <option value="Nearly every day">Nearly every day</option>
+              </select>
+          </div>
+          <div>
+            <label style={midLabel}>Subjective well-being scales  :</label>
+          </div>
+          <div>
+            <label>Overall I'm Satisfied with my life :</label>
+              {/* <input id='Subjective' type='text' required /> */}
+              <select id='SatisfiedLife'>
+                <option value="">-- Select --</option>
+                <option value="Stongly Agree">Strongly Agree</option>
+                <option value="Agree">Agree</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Disagree">Disagree</option>
+                <option value="Strongly Disagree">Strongly Disagree</option>
+              </select>
           </div>
 
         
         <h2>Cognitive Functioning</h2>
           <div>
-            <label>Cognitive assessments :</label>
-              <input id='Cognitive' type='text' required />
+            <label style={midLabel}>Cognitive assessments :</label>
           </div>
           <div>
-            <label>Thought patterns and cognitive distortions :</label>
-              <input id='Thought' type='text' required />
+            <label>How often do you find youself easily distracted? :</label>
+              {/* <input id='Cognitive' type='text' required /> */}
+              <select id='Cognitive'>
+                <option value="">-- Select --</option>
+                <option value="Rarely">Rarely</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Always">Always</option>
+                {/* <option value="Strongly Disagree">Strongly Disagree</option> */}
+              </select>
+          </div>
+          <div>
+            <label style={midLabel}>Thought patterns and cognitive distortions :</label></div><div>
+            <label>To what extent do you often catastrophize situations? (Expecting the worst outcome)</label>
+            <select id='Thought'>
+                <option value="">-- Select --</option>
+                <option value="Rarely">Rarely</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Always">Always</option>
+              </select>
           </div>
 
         
         <h2>Functional Impairment</h2>
           <div>
-            <label>Impact of mental health on daily functioning (work, relationships, self-care) :</label>
-              <input id='Impact' type='text' required />
+            <label>Have you ever missed work, school, or social engagements because of your mental health conditions? :</label>
+              {/* <input id='Impact' type='text' required /> */}
+              <select id='Impact'>
+                <option value="">-- Select --</option>
+                <option value="Never">Never</option>
+                <option value="Rarely">Rarely</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Often">Often</option>
+                <option value="Always">Always</option>
+            </select>
           </div>
 
         
@@ -313,14 +427,25 @@ const Ques = () => {
                 <option value="Poor">Poor</option>
                 <option value="Very Poor">Very Poor</option>
             </select>
+            </div>
+            <div>
             <label>Access to healthcare :</label>
             <select id='AccessHeathcare'>
                 <option value="">-- Select --</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            <label>Cultural factors :</label>
-              <input id='CulturalFactors' type='text' required />
+          </div>
+          <div>
+            <label>How concerned are you about environmental issues in your community? :</label>
+              {/* <input id='CulturalFactors' type='text' required /> */}
+              <select id='CulturalFactors'>
+                <option value="">-- Select --</option>
+                <option value="Somewhat Concern">Somewhat Concern</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Not very Concern">Not very Concern</option>
+                <option value="Not Concern at all">Not Concern at all</option>
+            </select>
           </div>
 
           
@@ -328,10 +453,10 @@ const Ques = () => {
       </form>
 
       {loading && <div className="loading">Loading...</div>} {/* Show loading indicator if loading is true */}
+    </div>
       {result && <Result result={result} />} {/* Show the Result component if result is not null */}
 
-    </div>
-  
+  </>
   )
 }
 

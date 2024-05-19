@@ -2,7 +2,7 @@
 
 .about{
     background-color: $first;
-    height: 78vh;
+    // height: 78vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -16,9 +16,21 @@
 
 }
 
+@media only screen and (max-width: 800px){
+    .about{
+        // height: 70vh;
+
+        #aboutContent{
+            margin-top: -18rem;
+            width: 88%;
+            font-size: 3ch;
+        }
+    }
+}
+
 @media only screen and (max-width: 600px){
     .about{
-        height: 70vh;
+        // height: 70vh;
 
         #aboutContent{
             margin-top: -18rem;
@@ -30,7 +42,7 @@
 
 @media only screen and (max-width: 400px){
     .about{
-        height: 70vh;
+        // height: 70vh;
 
         #aboutContent{
             font-size: 2ch;

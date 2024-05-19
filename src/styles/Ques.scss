@@ -2,8 +2,8 @@
 
 .ques{
     background-color: $first;
-    // margin-top: -8%;
-    height: 560vh;
+    padding-top: 10rem;
+    // height: 560vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -81,7 +81,7 @@
 @media only screen and (max-width: 600px){
     .ques{
         // margin-top: -40rem;
-        height: 840vh;
+        // height: 840vh;
 
         >h1{
             font-size: 1.7rem;
@@ -96,20 +96,6 @@
                 margin: 4rem;
                 font-size: 1.4rem;
                 text-align: center;
-            }
-
-            >#multipleInput3{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 30px;
-                height: 34vh;
-            }
-
-            >#multipleInput2{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 30px;
-                height: 24vh;
             }
 
             >div{
@@ -131,7 +117,7 @@
 @media only screen and (max-width: 400px){
     .ques{
         // margin-top: -40rem;
-        height: 840vh;
+        // height: 920vh;
 
         >h1{
             font-size: 1.2rem;
@@ -143,20 +129,6 @@
 
             >h2{
                 font-size: 1rem;
-            }
-
-            >#multipleInput3{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 30px;
-                height: 34vh;
-            }
-
-            >#multipleInput2{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 30px;
-                height: 24vh;
             }
 
             >div{
@@ -172,6 +144,10 @@
                 }
 
                
+            }
+
+            >button{
+                margin-top: 2rem;
             }
         }
     }

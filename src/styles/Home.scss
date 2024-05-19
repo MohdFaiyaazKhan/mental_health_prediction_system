@@ -162,22 +162,40 @@
     }
 }
 
+@media only screen and (max-width: 700px){
+    .home{
+        
+        >#robo{
+            margin-top: 10rem;
+        }
+
+        #dots{
+            margin-top: 20%;
+            width: 36%;
+        }
+        #heroHeading{
+            font-size: 5ch;
+        }
+
+    }
+}
+
 @media only screen and (max-width: 600px){
     .home{
         
         >#robo{
-            margin-top: 12rem;
-            width: 60%;
+            margin-top: 10rem;
+            width: 50%;
         }
 
         #dots{
-            margin-top: 46%;
+            margin-top: 22%;
             width: 60%;
         }
     
         #heroHeading{
-            font-size: 6ch;
-            margin-top: -8rem;
+            font-size: 4ch;
+            margin-top: -10rem;
         }
 
     }

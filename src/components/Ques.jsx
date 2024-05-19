@@ -10,17 +10,13 @@ const Ques = () => {
   const [loading, setLoading] = useState(false); // State to manage loading status
   const [result, setResult] = useState(null); // State to store the generated result
 
-  const midLabel ={
-    textAlign: 'center'
-  }
-
   async function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission behavior
     setLoading(true); 
   
     // Collect data from form fields
     const formData = {
-      prompt: "You are the best psychologist I know please help me in predicting my mental health, I have taken the data from a survey form and these are my details :",
+      prompt: "You are the best psychologist I know please help me in predicting my mental health and provide me my predicted mental health in more accurate and informative way, I have taken the data from a survey form and these are my details :",
       name: document.getElementById('name').value,
       age: document.getElementById('age').value,
       gender: document.getElementById('gender').value,
@@ -40,30 +36,30 @@ const Ques = () => {
       CurentMedications: document.getElementById('CurentMedical').value,
       HistoryOfSubstaceAbuse: document.getElementById('SubstaceAbuse').value,
 
-      YouHaveAvailabilityOfSupportSystemFromFamilyAndFriends: document.getElementById('Support').value,
-      YouHaveGoodRelationshipQuality: document.getElementById('Relationship').value,
-      YouHaveSocialIsolationIndicators: document.getElementById('Isolation').value,
+      IHaveAvailabilityOfSupportSystemFromFamilyAndFriends: document.getElementById('Support').value,
+      IHaveGoodRelationshipQuality: document.getElementById('Relationship').value,
+      IHaveSocialIsolationIndicators: document.getElementById('Isolation').value,
 
       RecentLifeEventsOrStressors: document.getElementById('RecentLifeEvents').value,
       CopingMechanism: document.getElementById('CopingMechanism').value,
 
       PersonalityAssessment: document.getElementById('PersonalityAssessment').value,
 
-      HaveYouNoticedAnyChangesInYourBehavior: document.getElementById('ChangesBehaviors').value,
-      DoYouFindYourselfAvoidingCertainActivitiesOrSituationsMoreThanUsual: document.getElementById('AvoidingBehaviors').value,
-      DoYouFindYourselfEngagingInRiskyBehaviors: document.getElementById('RiskyBehaviors').value,
+      INoticedAnyChangesInYourBehavior: document.getElementById('ChangesBehaviors').value,
+      DoIFindYourselfAvoidingCertainActivitiesOrSituationsMoreThanUsual: document.getElementById('AvoidingBehaviors').value,
+      DoIFindYourselfEngagingInRiskyBehaviors: document.getElementById('RiskyBehaviors').value,
 
-      HaveYouExperiencedLossOfInterestOrPleasureInActivitiesYouUsuallyEnjoy: document.getElementById('lossOfInterest').value,
+      IExperiencedLossOfInterestOrPleasureInActivitiesYouUsuallyEnjoy: document.getElementById('lossOfInterest').value,
       OverallIAmSatisfiedWithMyLife: document.getElementById('SatisfiedLife').value,
 
-      HowOftenDoYouFindYourselfEasilyDistracted: document.getElementById('Cognitive').value,
-      ToWhatExtendDoYouOftenCatastrophizeSituation: document.getElementById('Thought').value,
+      HowOftenDoIFindMyselfEasilyDistracted: document.getElementById('Cognitive').value,
+      ToWhatExtendDoIOftenCatastrophizeSituation: document.getElementById('Thought').value,
 
-      HaveYouEverMissedSchoolOrSocialEngagementBecauseOfYourMentalHealthConditions: document.getElementById('Impact').value,
+      HaveIEverMissedSchoolOrSocialEngagementBecauseOfMentalHealthConditions: document.getElementById('Impact').value,
 
       LivingConditions: document.getElementById('LivingCondition').value,
       AccessToHeathcare: document.getElementById('AccessHeathcare').value,
-      HowConcernAreYouAboutEnvironmentalIssuesInYourCommunity: document.getElementById('CulturalFactors').value,
+      HowConcernAmIAboutEnvironmentalIssuesInMyCommunity: document.getElementById('CulturalFactors').value,
     };
   
     const options = {
@@ -104,11 +100,11 @@ const Ques = () => {
         <h2>Demographic Information</h2>
           <div>
             <label>Name :</label>
-              <input id='name' type='text' required />
+              <input id='name' type='text' placeholder='Enter your Name' required />
           </div>
           <div id='multipleInput3'>
             <label>Age :</label>
-              <input id='age' type='number' required />
+              <input id='age' type='number' placeholder='Enter your Age' required />
           </div>
           <div>
             <label>Gender :</label>
@@ -129,7 +125,7 @@ const Ques = () => {
           </div>
           <div>
             <label>Educational Background :</label>
-              <input id='education' type='text' required />
+              <input id='education' type='text' placeholder='Tell us about your Education' required />
           </div>
 
         
@@ -188,7 +184,7 @@ const Ques = () => {
           </div>
           <div>
             <label>Self-reported symptoms (e.g., depression, anxiety, mood swing, etc) :</label>
-              <input id='selfReportSymptoms' type='text' required />
+              <input id='selfReportSymptoms' type='text' placeholder='Have you ever noticed any Symptom' required />
           </div>
 
         
@@ -280,6 +276,7 @@ const Ques = () => {
                 <option value="Legal immigration-related stressors">Legal immigration-related stressors</option>
                 <option value="Community-related stressors">Community-related stressors</option>
                 <option value="Educational/career advancement stressors">Educational/career advancement stressors</option>
+                <option value="None">None</option>
                 <option value="other">Other</option>
               </select>
           </div><div>
@@ -295,6 +292,7 @@ const Ques = () => {
                 <option value="Hobbies and Creativity">Hobbies and Creativity</option>
                 <option value="Sugar Intake">Sugar Intake</option>
                 <option value="Substance Abuse">Substance Abuse</option>
+                <option value="None">None</option>
                 <option value="Other">Other</option>
               </select>
           </div>
@@ -343,9 +341,6 @@ const Ques = () => {
         
         <h2>Self-Reported Measures</h2>
           <div>
-            <label style={midLabel}>Questionnaires and self-assessment tools for mental health :</label>
-          </div>
-          <div>
             <label>Have you experienced a loss of interest or pleasure in activities you usually enjoy? :</label>
               {/* <input id='Questionaries' type='text' required /> */}
               <select id='lossOfInterest'>
@@ -355,9 +350,6 @@ const Ques = () => {
                 <option value="More than half the days">More than half the days</option>
                 <option value="Nearly every day">Nearly every day</option>
               </select>
-          </div>
-          <div>
-            <label style={midLabel}>Subjective well-being scales  :</label>
           </div>
           <div>
             <label>Overall I'm Satisfied with my life :</label>
@@ -375,9 +367,6 @@ const Ques = () => {
         
         <h2>Cognitive Functioning</h2>
           <div>
-            <label style={midLabel}>Cognitive assessments :</label>
-          </div>
-          <div>
             <label>How often do you find youself easily distracted? :</label>
               {/* <input id='Cognitive' type='text' required /> */}
               <select id='Cognitive'>
@@ -390,7 +379,6 @@ const Ques = () => {
               </select>
           </div>
           <div>
-            <label style={midLabel}>Thought patterns and cognitive distortions :</label></div><div>
             <label>To what extent do you often catastrophize situations? (Expecting the worst outcome)</label>
             <select id='Thought'>
                 <option value="">-- Select --</option>
